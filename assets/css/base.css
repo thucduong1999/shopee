@@ -4,6 +4,7 @@
     --text-color: #333;
     --primary-color: #ee4d2d;
     --border-color: #dbdbdb;
+    --star-gold-color: #ffce3e;
 
     --header-height: 120px;
     --navbar-height: 34px;
@@ -37,20 +38,27 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 /* Test */
 .grid__column-2 {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: 16.6667%;
 }
 
+/* Tỉ lệ 5 sản phẩm chiếm 12 cột */
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
 .grid__column-10 {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: 83.3333%;
 }
 
@@ -174,12 +182,22 @@ html {
     position: absolute;
     left: 0;
     right: 0;
-    top: 24px;
+    top: 26px;
     border-radius: 2px;
     background-color: var(--white-color);
     padding: 8px 16px;
     list-style: none;
     display: none;
+    z-index: 1;
+}
+
+.seclect-input__list::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    top: -5px;
+    left: 0;
 }
 
 .seclect-input__link {
@@ -192,4 +210,39 @@ html {
 
 .seclect-input__link:hover {
     color: var(--primary-color);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    opacity: 0.9;
+}
+
+.pagination-item__link {
+    --height: 30px;
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    border-radius: 2px;
 }
