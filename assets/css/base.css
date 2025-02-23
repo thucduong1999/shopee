@@ -22,6 +22,8 @@ html {
     box-sizing: border-box;
 }
 
+
+/* Responsive */
 .grid {
     width: 1200px;
     max-width: 100%;
@@ -35,6 +37,21 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+/* Test */
+.grid__column-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.6667%;
+}
+
+.grid__column-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.3333%;
 }
 
 /* Animation */
@@ -99,7 +116,7 @@ html {
     cursor: pointer;
     color: var(--text-color);
     background-color: var(--white-color);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 1.6rem;
@@ -123,4 +140,56 @@ html {
     color: #949494;
     cursor: default;
     background-color: #c3c3c3;
+}
+
+/* Selection */
+.select-input {
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.select-input:hover .seclect-input__list {
+    display: block;
+}
+
+.seclect-input__label {
+    font-size: 1.4rem;
+}
+
+.seclect-input__icon {
+    font-size: 1.4rem;
+    color: rgba(131, 131, 131);
+    position: relative;
+    top: 1px;
+}
+
+.seclect-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 24px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 8px 16px;
+    list-style: none;
+    display: none;
+}
+
+.seclect-input__link {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+}
+
+.seclect-input__link:hover {
+    color: var(--primary-color);
 }
